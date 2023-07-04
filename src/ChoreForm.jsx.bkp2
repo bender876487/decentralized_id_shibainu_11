@@ -1,0 +1,77 @@
+import React from 'react';
+import { useState } from 'react';
+
+
+/*
+example data
+var puppynet_rpcUrl='https://puppyscan.shib.io/'
+var puppynet_chainid=917
+var wallet_address='0x071063******************'
+var private_key_wallet='b496******************'
+var keypair = EthrDID.createKeyPair()
+
+
+*/
+
+function ChoreForm({  }) {
+    const [puppynet_rpcUrl, update_puppynet_rpcUrl] = useState(`https://puppyscan.shib.io/`);
+    const [puppynet_chainid, update_puppynet_chainid] = useState(917);
+    const [wallet_address, update_wallet_address] = useState(`'0x071063******************'`);
+    const [private_key_wallet, update_private_key_wallet] = useState('b496******************');
+    const [name, setName] = useState();
+    const [date, setDate] = useState();
+    const handleSubmit= (e) => {
+      console.log(puppynet_rpcUrl)
+      console.log(name)
+      e.preventDefault();
+    }
+  
+    return (
+      <form onSubmit={e => { handleSubmit(e) }}>
+        <label>puppynet_rpcUrl:</label>
+        <br />
+        <input 
+          name='puppynet_rpcUrl' 
+          type='text'
+          value={puppynet_rpcUrl}
+          onChange={e => update_puppynet_rpcUrl(e.target.value)}
+        />
+        <br/>
+        <label>puppynet_chainid:</label>
+        <br />
+        <input 
+          name='puppynet_chainid' 
+          type='number'
+          value={puppynet_chainid}
+          onChange={e => update_puppynet_chainid(e.target.value)}
+        />
+        <br/>
+        <label>wallet_address:</label>
+        <br />
+        <input 
+          name='wallet_address' 
+          type='text'
+          value={wallet_address}
+          onChange={e => update_wallet_address(e.target.value)}
+        />
+        <br/>
+        <label>private_key_wallet:</label>
+        <br />
+        <input 
+          name='private_key_wallet' 
+          type='text'
+          value={private_key_wallet}
+          onChange={e => update_private_key_wallet(e.target.value)}
+        />
+        <br/>
+        <label>Check JS browser console</label>
+        <br />
+        <input 
+          type='submit' 
+          value='Add Log' 
+        />
+      </form>
+    )
+  }
+
+  export default ChoreForm;

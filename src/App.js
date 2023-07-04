@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import ChoreForm from './ChoreForm.jsx'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p><code>Sidetree Shiba</code></p>
       </header>
+      <br/>
+      <div className="VerticalSpaceWhite"> </div>
+        <p> You must use a real wallet_address and private_key_wallet, for ethereum blockchain.</p>
+        <p> You can create them with metamask plugin for chrome.</p>
+        <p> Check the JS browser console please.</p>
+
+      <div className="VerticalSpaceWhite"> </div>
+        <p>puppynet_rpcUrl=https://puppyscan.shib.io/</p>
+        <p>puppynet_chainid=917</p>
+     <div className="VerticalSpace"> </div>
+      <ChoreForm/>
+      <div className="VerticalSpaceWhite"> </div>
     </div>
   );
 }
