@@ -1,3 +1,23 @@
+i. Run these commands
+
+git clone https://github.com/bender876487/decentralized_id_shibainu_11.git
+
+cd decentralized_id_shibainu_11
+
+npm install
+npm audi fix
+
+#do not run: npm audi fix --force
+#do not force
+
+
+npm start
+
+open he browser to loalhost:3000
+
+
+
+
 //readme_decentralized_id_shibainu
 
 i. The component App.jsx calls ChoreForm.jsx .

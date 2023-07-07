@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import DidShibainuEtherDid from './DidShibainuEtherDid';
-import deploycontract_catchevent_etc from './hardhat_deploy_contract_shibarium/scripts/deploycontract_catchevent_etc';
+//import deploycontract_catchevent_etc from './hardhat_deploy_contract_shibarium/scripts/deploycontract_catchevent_etc';
 
 
 
@@ -64,7 +64,7 @@ export default function ChoreForm({  }) {
   //deploycontract_catchevent_etc  
   try {
       
-      eventEmitter_address =  deploycontract_catchevent_etc({DID:DID}) 
+      //eventEmitter_address =  deploycontract_catchevent_etc({DID:DID}) 
       
       console.log('[MSG536a. ChoreForm.mjs.] eventEmitter_address: ', eventEmitter_address);
           
