@@ -1,0 +1,85 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "EventEmitter",
+  "sourceName": "contracts/EventEmitter.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "ConstructorEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "MyEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "MyEventWithData",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "x",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "s",
+          "type": "string"
+        }
+      ],
+      "name": "emitBothEvents",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "emitMyEvent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "x",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "s",
+          "type": "string"
+        }
+      ],
+      "name": "emitMyEventWithData",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610225806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632bb969e6146100465780637600232d14610050578063c26f3c6914610063575b600080fd5b61004e610076565b005b61004e61005e36600461013d565b6100a1565b61004e61007136600461013d565b61010a565b6040517f4dbfb68b43dddfa12b51ebe99ab8fded620f9a0ac23142879a4f192a1b7952d290600090a1565b6040517f4dbfb68b43dddfa12b51ebe99ab8fded620f9a0ac23142879a4f192a1b7952d290600090a17f70cfecbfed19ac7dcd94d8821e2895b8d2bbbd12ac7d81586659183bc5019aea8383836040516100fd939291906101b9565b60405180910390a1505050565b7f70cfecbfed19ac7dcd94d8821e2895b8d2bbbd12ac7d81586659183bc5019aea8383836040516100fd939291906101b9565b60008060006040848603121561015257600080fd5b83359250602084013567ffffffffffffffff8082111561017157600080fd5b818601915086601f83011261018557600080fd5b81358181111561019457600080fd5b8760208285010111156101a657600080fd5b6020830194508093505050509250925092565b83815260406020820152816040820152818360608301376000818301606090810191909152601f909201601f191601019291505056fea2646970667358221220c3c5baed45d4b80d8343c11daacc0bdfabd2a56a61dbf402933f78b6e7c2b90b64736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80632bb969e6146100465780637600232d14610050578063c26f3c6914610063575b600080fd5b61004e610076565b005b61004e61005e36600461013d565b6100a1565b61004e61007136600461013d565b61010a565b6040517f4dbfb68b43dddfa12b51ebe99ab8fded620f9a0ac23142879a4f192a1b7952d290600090a1565b6040517f4dbfb68b43dddfa12b51ebe99ab8fded620f9a0ac23142879a4f192a1b7952d290600090a17f70cfecbfed19ac7dcd94d8821e2895b8d2bbbd12ac7d81586659183bc5019aea8383836040516100fd939291906101b9565b60405180910390a1505050565b7f70cfecbfed19ac7dcd94d8821e2895b8d2bbbd12ac7d81586659183bc5019aea8383836040516100fd939291906101b9565b60008060006040848603121561015257600080fd5b83359250602084013567ffffffffffffffff8082111561017157600080fd5b818601915086601f83011261018557600080fd5b81358181111561019457600080fd5b8760208285010111156101a657600080fd5b6020830194508093505050509250925092565b83815260406020820152816040820152818360608301376000818301606090810191909152601f909201601f191601019291505056fea2646970667358221220c3c5baed45d4b80d8343c11daacc0bdfabd2a56a61dbf402933f78b6e7c2b90b64736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

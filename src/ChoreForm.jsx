@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import DidShibainuEtherDid from './DidShibainuEtherDid';
+import deploycontract_catchevent_etc from './hardhat_deploy_contract_shibarium/scripts/deploycontract_catchevent_etc';
 
 
 
@@ -11,34 +12,80 @@ var puppynet_chainid=917
 var wallet_address='0x071063******************'
 var private_key_wallet='b496******************'
 var keypair = EthrDID.createKeyPair()
-
-
 */
 
-function ChoreForm({  }) {
-    const [puppynet_rpcUrl, update_puppynet_rpcUrl] = useState(`https://puppyscan.shib.io/`);
-    const [puppynet_chainid, update_puppynet_chainid] = useState(917);
-    const [wallet_address, update_wallet_address] = useState(`0x071063******************`);
-    const [private_key_wallet, update_private_key_wallet] = useState('b496******************');
-    const [name, setName] = useState();
-    const [date, setDate] = useState();
-    const handleSubmit= (e) => {
-    console.log(puppynet_rpcUrl)
-    console.log(puppynet_chainid)
-    console.log(wallet_address)
-    console.log(private_key_wallet)
-    var DidShibainuEtherDidArguments={puppynet_rpcUrl_new:puppynet_rpcUrl, puppynet_chainid_new:puppynet_chainid, wallet_address_new:wallet_address, private_key_wallet_new:private_key_wallet}
-      
-    try {
-          DidShibainuEtherDid(DidShibainuEtherDidArguments);
-          
-    } catch (error) {
-        console.error('[MSG535. ChoreForm.jsx. Invocation DidShibainuEtherDid().] '+ error);
-    }
 
+
+//function ChoreForm({  }) {
+export default function ChoreForm({  }) {
+  const [puppynet_rpcUrl, update_puppynet_rpcUrl] = useState(`https://puppyscan.shib.io/`);
+  const [puppynet_chainid, update_puppynet_chainid] = useState(917);
+  const [wallet_address, update_wallet_address] = useState(`0x071063******************`);
+  const [private_key_wallet, update_private_key_wallet] = useState('b496******************');
+    
+    
+    
+    
+  //HANDLESUBMIT
+  const handleSubmit= (e) => {
+        
+  console.log(puppynet_rpcUrl)
+  console.log(puppynet_chainid)
+  console.log(wallet_address)
+  console.log(private_key_wallet)
+    
+  
+  
+    
+  var DidShibainuEtherDidArguments={puppynet_rpcUrl_new:puppynet_rpcUrl, puppynet_chainid_new:puppynet_chainid, wallet_address_new:wallet_address, private_key_wallet_new:private_key_wallet}
+
+  
+  var DID=null
+  var ethrDid_string = null
+  var eventEmitter_address= null
+  
+  //-------------------        
+  //GENERATE DID  
+  try {
       
-      e.preventDefault();
-    }
+      DID =  DidShibainuEtherDid(DidShibainuEtherDidArguments) ;
+      ethrDid_string = JSON.stringify(DID)
+
+      console.log('[MSG535a. ChoreForm.mjs.] DID: ', DID);
+      console.log('[MSG535b. ChoreForm.mjs.] ethrDid_string: ', ethrDid_string);
+          
+  } catch (error) {
+        console.error('[MSG535. ChoreForm.mjs. Invocation DidShibainuEtherDid().] '+ error);
+  }
+    
+
+  //-------------------  
+  //RECORD DID IN THE puppynet chain
+  //deploycontract_catchevent_etc  
+  try {
+      
+      eventEmitter_address =  deploycontract_catchevent_etc({DID:DID}) 
+      
+      console.log('[MSG536a. ChoreForm.mjs.] eventEmitter_address: ', eventEmitter_address);
+          
+  } catch (error) {
+        console.error('[MSG536. ChoreForm.mjs. Invocation deploycontract_catchevent_etc().] '+ error);
+  }
+    
+  //-------------------  
+      
+   e.preventDefault();
+  }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   
 /*
 //var puppynet_rpcUrl='https://puppyscan.shib.io/'
@@ -48,7 +95,7 @@ function ChoreForm({  }) {
  
 */  
   
-    return (
+  return (
       <form onSubmit={e => { handleSubmit(e) }}>
         <div className="VerticalSpaceWhite"> </div>
         <label>puppynet_rpcUrl, say https://puppyscan.shib.io/:</label>
@@ -98,7 +145,7 @@ function ChoreForm({  }) {
           value='Submit/Generate DID' 
         />
       </form>
-    )
-  }
+  )
+}
 
-  export default ChoreForm;
+//  export default ChoreForm;

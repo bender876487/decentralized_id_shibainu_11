@@ -10,7 +10,7 @@ import { getResolver } from 'ethr-did-resolver';
 //var DidShibainuEtherDidArguments={puppynet_rpcUrl:puppynet_rpcUrl, puppynet_chainid:puppynet_chainid, wallet_address:wallet_address, private_key_wallet:private_key_wallet}
 
 
-export default async function DidShibainuEtherDid({puppynet_rpcUrl_new, puppynet_chainid_new, wallet_address_new, private_key_wallet_new}) 
+export default async function DidShibainuEtherDid({puppynet_rpcUrl_new, puppynet_chainid_new, wallet_address_new, private_key_wallet_new, DID}) 
 {
 
 
@@ -36,7 +36,8 @@ var keypair = EthrDID.createKeyPair()
 
 var ethrDid = null
 
-console.log("\n\n") 
+console.log('\n\n[MSG4451. DidShibainuEtherDid.mjs. Start.]\n\n');
+
 console.log({puppynet_rpcUrl_new, puppynet_chainid_new, wallet_address_new, private_key_wallet_new}) 
 console.log("\n\n") 
 
@@ -82,15 +83,15 @@ console.log("Generated DID Shib:", didUri_shib)
 console.log(ethrDid)
 */
 
+console.log('\n\n[MSG4452. DidShibainuEtherDid.mjs. ]\n\n');
+console.log("\n\n") 
+console.log('keypair: ', keypair) //get keypair
 
 console.log("\n\n") 
-console.log(keypair) //get keypair
+console.log('ethrDid_sting_shib: ', ethrDid_sting_shib) //get keypair
 
 console.log("\n\n") 
-console.log(ethrDid_sting_shib) //get all
-
-console.log("\n\n") 
-console.log(ethrDid.address) //provide its own address (ethrDid.address)
+console.log('ethrDid.address: ', ethrDid.address) //provide its own address (ethrDid.address)
 
 
 
@@ -141,6 +142,8 @@ console.log("\n\n")
 var puppynet_chainname=`puppynet`
 //const didResolver = new Resolver(getResolver({ rpcUrl, name: "goerli" }));
 const didResolver = new Resolver(getResolver({ rpcUrl:puppynet_rpcUrl, name: "puppynet" }));
+
+console.log('\n\n[MSG4453. DidShibainuEtherDid.mjs. ]\n\n');
 console.log("\n\n") 
 console.log(didResolver)
 console.log("\n\n") 
@@ -148,12 +151,17 @@ console.log(JSON.stringify(didResolver))
 
 
 //get did decoment
-const didDocument = (await didResolver.resolve(ethrDid.did)).didDocument
+console.log('\n\n[MSG4454. DidShibainuEtherDid.mjs. ]\n\n');
+const didResolved = await didResolver.resolve(ethrDid.did)
+const didDocument = didResolved.didDocument
+//(await didResolver.resolve(ethrDid.did)).didDocument
 console.log("\n\n") 
 console.log(didDocument)
 console.log("\n\n") 
 console.log(JSON.stringify(didDocument))
 
+
+return ethrDid
 
 }
 

@@ -1,0 +1,73 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "SimpleSidetreeAnchor",
+  "sourceName": "contracts/SimpleSidetreeAnchor.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "anchorFileHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "transactionNumber",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "numberOfOperations",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "writer",
+          "type": "address"
+        }
+      ],
+      "name": "Anchor",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_anchorHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_numberOfOperations",
+          "type": "uint256"
+        }
+      ],
+      "name": "anchorHash",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "transactionNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60806040526000805534801561001457600080fd5b50610133806100246000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80634cd27ad5146037578063aac4c5c4146048575b600080fd5b6046604236600460b7565b6062565b005b605060005481565b60405190815260200160405180910390f35b6000546040805184815260208101849052338183015290517fb4f61711f79e76c7c0495763576465dc425bc281adf632799374ab5c83bc1d459181900360600190a260005460b090600160d8565b6000555050565b6000806040838503121560c957600080fd5b50508035926020909101359150565b6000821982111560f857634e487b7160e01b600052601160045260246000fd5b50019056fea264697066735822122040529ba4ec9d5291b4b1d4fb02c91fb1078d45ee415ba1ebd9e292558c7b3d6864736f6c63430008090033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80634cd27ad5146037578063aac4c5c4146048575b600080fd5b6046604236600460b7565b6062565b005b605060005481565b60405190815260200160405180910390f35b6000546040805184815260208101849052338183015290517fb4f61711f79e76c7c0495763576465dc425bc281adf632799374ab5c83bc1d459181900360600190a260005460b090600160d8565b6000555050565b6000806040838503121560c957600080fd5b50508035926020909101359150565b6000821982111560f857634e487b7160e01b600052601160045260246000fd5b50019056fea264697066735822122040529ba4ec9d5291b4b1d4fb02c91fb1078d45ee415ba1ebd9e292558c7b3d6864736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
